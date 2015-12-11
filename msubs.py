@@ -11,6 +11,7 @@ import sys, os, time
 
 def main(args):
    '''  '''
+   jobs = CreateMsubJobs(args)
    for job in jobs:
       os.system(job)
       time.sleep(1)
