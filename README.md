@@ -11,11 +11,14 @@ Each job is then submitted to the queing system with a waiting time of one
 second in between to avoid overloading the system.
 
 # Usage
-To use this wrapper script is very simple.
+To use this wrapper script is very simple. The command has 3 parts.
+
 First argument should be either "qsub" or "msub".
-next comes the arguments for qsub or msub, this could for instance be
+
+Next comes the arguments for qsub or msub, this could for instance be
 "-W group_list=MYGROUP -A MYGROUP -l nodes=1:ppn=1,mem=1gb,walltime=0:00:30"
-and in the end you can list all the shell scripts you want submitted with the
+
+In the end you can list all the shell scripts you want submitted with the
 previous defined submission parameters.
 
 # Example (usage on computerome)
@@ -27,6 +30,7 @@ previous defined submission parameters.
 # Dry run
 To make a dry run and see what is submitted, the commands can be run with echo
 as the first argument.
+
     $ ./msubs.py echo msub -W group_list=MYGROUP -A MYGROUP -l nodes=1:ppn=1,mem=1gb,walltime=0:00:30 job1.sh job2.sh
     msub -W group_list=MYGROUP -A MYGROUP -l nodes=1:ppn=1,mem=1gb,walltime=0:00:30 job1.sh
     msub -W group_list=MYGROUP -A MYGROUP -l nodes=1:ppn=1,mem=1gb,walltime=0:00:30 job2.sh
